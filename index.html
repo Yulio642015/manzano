@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manzano A</title>
+
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 65px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.lote {
+  width: 65px;
+  height: 65px;
+  background: green;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.seleccionado {
+  background: orange;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Manzano A</h2>
+
+<div class="grid" id="contenedor"></div>
+
+<div id="resultado">Ningún lote seleccionado</div>
+
+<script>
+let contenedor = document.getElementById("contenedor");
+let resultado = document.getElementById("resultado");
+let loteSeleccionado = null;
+
+for(let i=1;i<=20;i++){
+  let boton = document.createElement("button");
+  boton.className="lote";
+  boton.innerText="L"+i;
+
+  boton.onclick=function(){
+    if(loteSeleccionado){
+      loteSeleccionado.classList.remove("seleccionado");
+    }
+    boton.classList.add("seleccionado");
+    loteSeleccionado = boton;
+    resultado.innerText = "Seleccionaste el Lote " + i;
+  }
+
+  contenedor.appendChild(boton);
+}
+</script>
+
+</body>
+</html>
