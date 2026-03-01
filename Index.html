@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Quiz de Verdadero o Falso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .pregunta {
+            font-size: 22px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .verdadero {
+            background-color: #28a745;
+            color: white;
+        }
+        .falso {
+            background-color: #dc3545;
+            color: white;
+        }
+        #resultado {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¡Bienvenidos al Quiz de la Familia!</h1>
+
+    <div class="pregunta" id="pregunta">¿La Tierra es plana?</div>
+
+    <button class="verdadero" onclick="verificar(false)">Verdadero</button>
+    <button class="falso" onclick="verificar(true)">Falso</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificar(respuestaCorrecta) {
+            const resultado = document.getElementById("resultado");
+            if(respuestaCorrecta) {
+                resultado.innerHTML = "✅ ¡Correcto!";
+                resultado.style.color = "#28a745";
+            } else {
+                resultado.innerHTML = "❌ Incorrecto";
+                resultado.style.color = "#dc3545";
+            }
+        }
+    </script>
+
+</body>
+</html>
